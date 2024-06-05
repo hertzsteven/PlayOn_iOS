@@ -23,13 +23,13 @@ struct TestContinuousAnimationStartStop: View {
 		var body: some View {
 			Button(action: { self.showProgress.toggle() }, label: {
 				if showProgress {
-					Image(systemName: "arrow.2.circlepath")
+                    Image(systemName: "arrow.2.circlepath").font(.system(size: 64))
 						.rotationEffect(Angle(degrees: self.isAnimating ? 360 : 0.0))
 						.animation(self.isAnimating ? foreverAnimation : .default, value: isAnimating)
 						.onAppear { self.isAnimating = true }
 						.onDisappear { self.isAnimating = false }
 				} else {
-					Image(systemName: "arrow.2.circlepath")
+					Image(systemName: "arrow.2.circlepath").font(.system(size: 64))
 				}
 			})
 			.onAppear { self.showProgress = true }
